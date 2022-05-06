@@ -12,7 +12,7 @@ import (
 	ldbopts "github.com/syndtr/goleveldb/leveldb/opt"
 )
 
-var log = logging.Logger("rpcserver-badger")
+var log = logging.Logger("rpcserver-leveldb")
 
 type DatastoreService struct {
 	db datastore.Batching

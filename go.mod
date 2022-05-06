@@ -1,4 +1,4 @@
-module github.com/ipfs/go-ds-rpcserver-badger
+module github.com/ipfs/go-ds-rpcserver-leveldb
 
 require (
 	github.com/ethereum/go-ethereum v1.10.17
