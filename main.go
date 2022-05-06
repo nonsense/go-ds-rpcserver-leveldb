@@ -1,13 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 
+	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/gorilla/mux"
-	"github.com/gorilla/rpc"
-	"github.com/gorilla/rpc/json"
-
 	logging "github.com/ipfs/go-log/v2"
 )
 
@@ -16,21 +13,11 @@ func init() {
 }
 
 func main() {
-	rpcServer := rpc.NewServer()
-
-	rpcServer.RegisterCodec(json.NewCodec(), "application/json")
-	rpcServer.RegisterCodec(json.NewCodec(), "application/json;charset=UTF-8")
-
 	ds := NewDatastoreService()
-
-	err := rpcServer.RegisterService(ds, "")
-	if err != nil {
-		panic(err)
-	}
+	server := rpc.NewServer()
+	server.RegisterName("rpcdatastore", ds)
 
 	router := mux.NewRouter()
-	router.Handle("/", rpcServer)
-
-	fmt.Println("Listening...")
-	http.ListenAndServe(":8089", router)
+	router.Handle("/", server)
+	http.ListenAndServe("localhost:8089", router)
 }

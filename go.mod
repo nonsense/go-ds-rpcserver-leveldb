@@ -1,37 +1,33 @@
 module github.com/ipfs/go-ds-rpcserver-badger
 
 require (
-	github.com/dgraph-io/badger/v2 v2.2007.3
+	github.com/ethereum/go-ethereum v1.10.17
 	github.com/gorilla/mux v1.8.0
-	github.com/gorilla/rpc v1.2.0
 	github.com/ipfs/go-datastore v0.5.1
-	github.com/ipfs/go-detect-race v0.0.1
 	github.com/ipfs/go-ds-leveldb v0.5.0
 	github.com/ipfs/go-log/v2 v2.5.0
-	github.com/jbenet/goprocess v0.1.4
-	github.com/stretchr/testify v1.7.0
-	go.uber.org/zap v1.19.1
+	github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7
 )
 
 require (
-	github.com/DataDog/zstd v1.4.1 // indirect
-	github.com/cespare/xxhash v1.1.0 // indirect
-	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/dgraph-io/ristretto v0.0.3-0.20200630154024-f66de99634de // indirect
-	github.com/dgryski/go-farm v0.0.0-20190423205320-6a90982ecee2 // indirect
-	github.com/dustin/go-humanize v1.0.0 // indirect
-	github.com/golang/protobuf v1.3.1 // indirect
-	github.com/golang/snappy v0.0.1 // indirect
-	github.com/google/uuid v1.1.1 // indirect
+	github.com/StackExchange/wmi v0.0.0-20180116203802-5d049714c4a6 // indirect
+	github.com/deckarep/golang-set v1.8.0 // indirect
+	github.com/go-ole/go-ole v1.2.1 // indirect
+	github.com/go-stack/stack v1.8.0 // indirect
+	github.com/golang/snappy v0.0.4 // indirect
+	github.com/google/uuid v1.2.0 // indirect
+	github.com/gorilla/websocket v1.4.2 // indirect
+	github.com/jbenet/goprocess v0.1.4 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
-	github.com/pkg/errors v0.8.1 // indirect
-	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/syndtr/goleveldb v1.0.0 // indirect
+	github.com/shirou/gopsutil v3.21.4-0.20210419000835-c7a38de76ee5+incompatible // indirect
+	github.com/tklauser/go-sysconf v0.3.5 // indirect
+	github.com/tklauser/numcpus v0.2.2 // indirect
 	go.uber.org/atomic v1.7.0 // indirect
 	go.uber.org/multierr v1.6.0 // indirect
-	golang.org/x/net v0.0.0-20210405180319-a5a99cb37ef4 // indirect
+	go.uber.org/zap v1.19.1 // indirect
+	golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2 // indirect
 	golang.org/x/sys v0.0.0-20211216021012-1d35b9e2eb4e // indirect
-	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
+	gopkg.in/natefinch/npipe.v2 v2.0.0-20160621034901-c1b8fa8bdcce // indirect
 )
 
 go 1.18
