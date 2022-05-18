@@ -34,6 +34,8 @@ func NewDatastoreService(repopath string) *DatastoreService {
 		panic(err)
 	}
 
+	log.Debugw("datastore.service", "repo path", repopath)
+
 	return &DatastoreService{
 		db: db,
 	}

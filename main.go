@@ -26,5 +26,8 @@ func main() {
 
 	router := mux.NewRouter()
 	router.Handle("/", server)
+
+	log.Debugw("leveldb.path", "path", repopath)
+	log.Infow("http.listen", "server is listening", "localhost:8089")
 	http.ListenAndServe("localhost:8089", router)
 }
