@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"net/http"
 
 	"github.com/ethereum/go-ethereum/rpc"
@@ -8,12 +9,18 @@ import (
 	logging "github.com/ipfs/go-log/v2"
 )
 
+var repopath string
+
 func init() {
 	logging.SetLogLevel("*", "debug")
+
+	flag.StringVar(&repopath, "repopath", "", "path for repo")
 }
 
 func main() {
-	ds := NewDatastoreService()
+	flag.Parse()
+
+	ds := NewDatastoreService(repopath)
 	server := rpc.NewServer()
 	server.RegisterName("rpcdatastore", ds)
 

@@ -20,15 +20,16 @@ type DatastoreService struct {
 	db datastore.Batching
 }
 
-func NewDatastoreService() *DatastoreService {
-	//TODO: add config and options
-
-	dir, err := ioutil.TempDir("", "ds-leveldb")
-	if err != nil {
-		panic(err)
+func NewDatastoreService(repopath string) *DatastoreService {
+	if repopath == "" {
+		var err error
+		repopath, err = ioutil.TempDir("", "ds-leveldb")
+		if err != nil {
+			panic(err)
+		}
 	}
 
-	db, err := levelDs(dir, false)
+	db, err := levelDs(repopath, false)
 	if err != nil {
 		panic(err)
 	}
